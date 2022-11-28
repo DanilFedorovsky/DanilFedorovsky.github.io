@@ -37,34 +37,58 @@
             <div class="about-col-2">
                 <h1 class="sub-title">About me</h1>
                 <p>
-                    Honestly, I am a great guy. Caring, intelligent and funny.
-                    Your mother likes me. There is just so much more one could say.
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
-                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
-                    duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut 
-                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores 
-                    et ea rebum. 
-                    Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt 
-                    ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo 
-                    duo dolores et ea rebum.
+                    Hi, I am happy to welcome you on my personal page! ☺️ <br><br>
+
+                    Some random facts about me: <br><br>
+                    🍣  Managed to eat 2.14 kg  of sushi in one hour<br><br>
+                    💥  Almost died four times <br><br>
+                    🎵  I enjoy playing the digeridoo <br><br>
+                    📚  My favorite book is the Steve Jobs biography by Walter Isaacson <br>
                 </p>
             </div>
         </div>
-    </div>
+    </d💥iv>
 </div>
 <!------projects------>
 <div id="projects">
     <div class = "container">
         <div class = "row">
-            <div class="projects-col-1"><img src="images/StudentHack.png"></div>
             <div class="projects-col-2">
                 <h1 class="sub-title">Projects</h1>
                 <p>
-                    Currently, I am working on my master's thesis about neural beamforming. Feel free to check out <a href="https://github.com/DanilFedorovsky/neuralbeamformer">my progress.</a>
+                    These are some projects I am working on now or have been working on recently.
                 </p>
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('NeuralBeamforming')">Neural Beamforming</p>
+                    <p class="tab-links" onclick="opentab('StudentHack')">StudentHack</p>
+                </div>
+                <div class="tab-contents active-tab" id="NeuralBeamforming">
+                    <ul>
+                        <li>
+                            <span>Current semester</span><br>
+                            I am working on my master's thesis about neural beamforming and speech separation. 
+                            Feel free to check out <a href="https://github.com/DanilFedorovsky/neuralbeamformer">
+                            my progress.</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="StudentHack">
+                    <ul>
+                        <li>
+                            <span>24.11.2022 - 25.11.2022</span><br>
+                            Paticipation with a team of five in the <a href="https://studentec.de/events/studentHACK2022">
+                            StudentHack programming competition</a>. We built a predictive maintanance
+                            product for a pump manufacturer. Predictions are based on a neural network ensemble made up of
+                            a feed-forward, a CNN and an LSTM network. SHAP explanations were used for explainability.<br>
+                            Out of six teams, we managed to achieve second place and win 500€<br><br>
+                            The code can be found in <a href="https://github.com/DanilFedorovsky/studentHack404""">this Repo</a>.
+                        </li>
+                    </ul>
+                </div>
             </div>
+            <div class="projects-col-1">
+                <img src="images/StudentHack.png" class="tab-imgs" id="StudentHack">
+                <img src="images/bf.png" class="tab-imgs active-img" id="NeuralBeamforming"></div>
         </div>
     </div>
 </div>
@@ -91,6 +115,38 @@
         </div>
     </div>
 </div>
+<script>
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents")
+    var tabimgs = document.getElementsByClassName("tab-imgs")
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        for(tabimg of tabimgs){
+            tabimg.classList.remove("active-img");
+        }
+        event.currentTarget.classList.add("active-link");
 
+        imgs = document.getElementsByClassName("tab-imgs")
+        for(img of imgs){
+            console.log(img)
+            if (img.id === tabname){
+                img.classList.add("active-img")
+            }
+        }
+
+        conts = document.getElementsByClassName("tab-contents")
+        for(cont of conts){
+            console.log(img)
+            if (cont.id === tabname){
+                cont.classList.add("active-tab")
+            }
+        }
+    }
+</script>
 </body>
 </html>
