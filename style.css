@@ -3,15 +3,19 @@
     padding:0;
     font-family: 'Poppings', 'sans-serif';
     box-sizing: border-box;
+    --font-color:#454855;
     --primary-color:#8705a7d7;
-    --background-color:#E7E8EE;
+    --background-color:#F8F8FB;
+}
+a{
+    color: var(--primary-color);
 }
 html{
     scroll-behavior: smooth;/*no jumps in scrolling*/
 }
 body{
     background: var(--background-color);
-    color: #000;
+    color: var(--font-color);
 }
 #header{
     width: 100%;
@@ -82,7 +86,7 @@ nav ul li a:hover::after{
 /***********about*********/
 #about{
     padding: 80px 0;
-    color: black;
+    color: var(--font-color);
 }
 .row{
     display: flex;/*contents side by side*/
@@ -111,7 +115,7 @@ nav ul li a:hover::after{
 /***********projects*********/
 #projects{
     padding: 80px 0;
-    color: black;
+    color: var(--font-color);
 }
 .row{
     display: flex;/*contents side by side*/
@@ -176,7 +180,7 @@ nav ul li a:hover::after{
 }
 /***********contact*********/
 .social-icons a{
-    color: black;
+    color: var(--font-color);
     font-size: 18px;
     text-decoration: none;
     position: relative;
@@ -184,7 +188,7 @@ nav ul li a:hover::after{
 .social-icons a i{
     font-size: 18px;
     padding: 10px;
-    color: black;
+    color: var(--font-color);
     list-style: none;
 }
 .social-icons ul li{
