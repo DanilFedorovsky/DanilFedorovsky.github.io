@@ -197,3 +197,53 @@ nav ul li a:hover::after{
 .icon-text{
     color: var(--primary-color);
 }
+/* -----css for small screens----- */
+@media only screen and (max-width: 600px){
+    #header{
+        width: 120%;
+        height: 600px;
+    }
+    .header-text{
+        margin-top: 50%;
+        font-size: 16px;
+    }
+    .header-text h1{
+        font-size: 28px;
+    }
+    #about{        
+    }
+    .sub-title{
+        margin-top: 20;
+        font-size: 36px;
+    }
+    .about-col-1,.about-col-2{
+        flex-basis: 100%
+    }
+    .about-col-1{
+        margin-bottom: 50px;
+    }
+    .about-col-2 p{
+        font-size: 18px;
+    }
+    #projects{
+    }
+    .projects-col-2{
+        font-size: 18px;
+    }
+    .projects-col-1{
+        margin-top: 20px
+    }
+    .projects-col-1 img{
+        height: 300;
+    }
+    .tab-links{
+        font-size: 12px;
+    }
+    #contact{
+        margin-top: 100;
+    }
+    .contact-left{
+        flex-basis: 100%;
+        font-size: 12px;
+    }
+}
