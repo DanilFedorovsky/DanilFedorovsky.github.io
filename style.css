@@ -213,6 +213,9 @@ nav ul li a:hover::after{
     .header-text h1{
         font-size: 28px;
     }
+    #header li{
+        display: none;
+    }
     #about{        
     }
     .sub-title{
