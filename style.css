@@ -179,6 +179,9 @@ nav ul li a:hover::after{
     display: block;
 }
 /***********contact*********/
+.fa-brands,.fa-solid{
+    width: 40px;
+}
 .social-icons a{
     color: var(--font-color);
     font-size: 18px;
