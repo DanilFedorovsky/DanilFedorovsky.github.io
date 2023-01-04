@@ -235,12 +235,17 @@ nav ul li a:hover::after{
     }
     .projects-col-2{
         font-size: 18px;
+        margin-right: 30px;
     }
     .projects-col-1{
-        margin-top: 20px
+        margin-top: 20px;
+        margin-right: 30px;
     }
     .projects-col-1 img{
         height: 300;
+    }
+    .tab-contents{
+        margin-right: 30px;
     }
     .tab-links{
         font-size: 12px;
