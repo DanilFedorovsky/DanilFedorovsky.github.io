@@ -1,9 +1,13 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danil Fedorovsky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/041c4279d9.js" crossorigin="anonymous"></script>
 </head>
@@ -24,8 +28,8 @@
             </nav>
             <div class="header-text">
                 <!--<p>Machine Learning Student</p>-->
-                <h1>Hi! I'm <span>Danil</span>,<br> an information<br> systems student</h1>
-                <img src="images/Schlo.JPG" class="logo">
+                <h1>Hi! I'm <span>Danil</span>,<br> an AI engineer</h1>
+                <img src="images/Schlo.JPG" alt="Danil Fedorovsky" class="logo">
             </div>
         </div>
     </div>
@@ -33,7 +37,7 @@
 <div id="about">
     <div class = "container">
         <div class = "row">
-            <div class="about-col-1"><img src="images/PG.jpg"></div>
+            <div class="about-col-1"><img src="images/PG.jpg" alt="Danil Fedorovsky"></div>
             <div class="about-col-2">
                 <h1 class="sub-title">About me</h1>
                 <p>
@@ -82,7 +86,7 @@
                             product for a pump manufacturer. Predictions are based on a neural network ensemble made up of
                             a DNN, a CNN and an LSTM network. SHAP explanations were used for explainability.<br>
                             Out of six teams, we achieved second place winning 500€.<br>
-                            The code can be found in <a href="https://github.com/DanilFedorovsky/studentHack404""">this Repo</a>.
+                            The code can be found in <a href="https://github.com/DanilFedorovsky/studentHack404">this Repo</a>.
                         </li>
                     </ul>
                 </div> 
@@ -94,7 +98,7 @@
                             We developed a point of interest detector for buildings and statues across the KIT campus. 
                             The model was based on a pretrained tiny-Yolo version, so that it could be deployed on a Jetson Nano.
                             It achieved a mAP >90%.<br>
-                            The results are demonstrated in <a href="https://youtu.be/GcUkI2sIKA8""">this youtube video</a>.
+                            The results are demonstrated in <a href="https://youtu.be/GcUkI2sIKA8">this youtube video</a>.
                         </li>
                     </ul>
                 </div>
@@ -105,16 +109,16 @@
                             Paticipation with a team of three in the <a href="https://www.pioniergarage.de/event/sdacathon/">
                             SDaCathon - Hack the Construction! competition</a>. We built a web app for online journalling of construction diaries 
                             empowered by AI prediction tools.<br>
-                            The results can be found in <a href="https://devpost.com/software/p2-ubermacht?ref_content=user-portfolio&ref_feature=in_progress""">Devpost</a>.
+                            The results can be found in <a href="https://devpost.com/software/p2-ubermacht?ref_content=user-portfolio&ref_feature=in_progress">Devpost</a>.
                         </li>
                     </ul>
                 </div>
             </div>
             <div class="projects-col-1">
-                <img src="images/AISS.png" class="tab-imgs" id="AISS">
-                <img src="images/SDac.jpg" class="tab-imgs" id="Sdac">
-                <img src="images/StudentHack.png" class="tab-imgs" id="StudentHack">
-                <img src="images/bf.png" class="tab-imgs active-img" id="NeuralBeamforming">
+                <img src="./images/AISS.png" class="tab-imgs" id="AISS" alt="POI Detector Project" style="opacity: 1; visibility: visible;">
+                <img src="./images/SDac.jpg" class="tab-imgs" id="Sdac" alt="SDaCathon Project" style="opacity: 1; visibility: visible;">
+                <img src="./images/StudentHack.png" class="tab-imgs" id="StudentHack" alt="StudentHack Project" style="opacity: 1; visibility: visible;">
+                <img src="./images/bf.png" class="tab-imgs active-img" id="NeuralBeamforming" alt="Neural Beamforming Project">
         </div>
     </div>
 </div>
@@ -142,36 +146,38 @@
     </div>
 </div>
 <script>
-    var tablinks = document.getElementsByClassName("tab-links")
-    var tabcontents = document.getElementsByClassName("tab-contents")
-    var tabimgs = document.getElementsByClassName("tab-imgs")
-    function opentab(tabname){
-        for(tablink of tablinks){
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    var tabimgs = document.getElementsByClassName("tab-imgs");
+
+    function opentab(tabname) {
+        // Remove active class from all elements
+        for(tablink of tablinks) {
             tablink.classList.remove("active-link");
         }
-        for(tabcontent of tabcontents){
+        for(tabcontent of tabcontents) {
             tabcontent.classList.remove("active-tab");
         }
-        for(tabimg of tabimgs){
+        for(tabimg of tabimgs) {
             tabimg.classList.remove("active-img");
         }
+
+        // Add active class to clicked tab
         event.currentTarget.classList.add("active-link");
 
-        imgs = document.getElementsByClassName("tab-imgs")
-        for(img of imgs){
-            console.log(img)
-            if (img.id === tabname){
-                img.classList.add("active-img")
-            }
+        // Show corresponding content and image
+        document.getElementById(tabname).classList.add("active-tab");
+        
+        // Find and show the corresponding image
+        const image = document.querySelector(`img#${tabname}`);
+        if (image) {
+            image.classList.add("active-img");
         }
+    }
 
-        conts = document.getElementsByClassName("tab-contents")
-        for(cont of conts){
-            console.log(img)
-            if (cont.id === tabname){
-                cont.classList.add("active-tab")
-            }
-        }
+    // Initialize the first tab as active when the page loads
+    window.onload = function() {
+        document.querySelector('.tab-links').click();
     }
 </script>
 </body>
